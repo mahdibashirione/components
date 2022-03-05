@@ -11,10 +11,12 @@
 </head>
 
 <body>
-  <header class="w-full border-b-2 border-solid border-slate-100 sticky top-0 bg-white">
-    <nav class="container flex relative justify-between items-center flex-wrap px-4 py-2 mx-auto">
-      <div class="lg:hidden cursor-pointer">
-        <i class="fa-solid fa-bars text-3xl"></i>
+  <header class="w-full sticky top-0 bg-white z-10 shadow-md">
+    <nav class="container flex relative justify-between items-center flex-wrap p-3">
+      <div class="btnNav lg:hidden cursor-pointer flex flex-col items-center rounded-md">
+        <div class="w-6 h-[3px] bg-slate-900 rounded-lg transition-all ease-in duration-200 "></div>
+        <div class="w-6 h-[3px] bg-slate-900 rounded-lg transition-all ease-in duration-200 my-[6px] "></div>
+        <div class="w-6 h-[3px] bg-slate-900 rounded-lg transition-all ease-in duration-200 "></div>
       </div>
 
       <div class="hidden lg:block">
@@ -22,19 +24,20 @@
       </div>
 
       <ul
-        class="w-full absolute right-0 top-full px-4 overflow-hidden lg:relative lg:w-auto lg:flex items-center justify-center">
+        class="nav hidden w-full bg-slate-50 absolute right-0 top-full px-4 overflow-hidden md:bg-white md:relative md:w-auto md:flex items-center justify-center">
         <li class="w-full lg:w-auto lg:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap ">خانه</a>
+            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">خانه</a>
         </li>
-        <li class="w-full lg:w-auto lg:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap ">فروشگاه</a>
+        <li class="w-full md:w-auto md:mx-4"><a href="#"
+            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">فروشگاه</a>
         </li>
-        <li class="w-full lg:w-auto lg:mx-4"><a href="#" class="py-2 block hover:text-purple-800 whitespace-nowrap ">سبد
+        <li class="w-full md:w-auto md:mx-4"><a href="#"
+            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">سبد
             خرید</a></li>
-        <li class="w-full lg:w-auto lg:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap ">پشتیبانی</a></li>
-        <li class="w-full lg:w-auto lg:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap ">درباره
+        <li class="w-full md:w-auto md:mx-4"><a href="#"
+            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">پشتیبانی</a></li>
+        <li class="w-full md:w-auto md:mx-4"><a href="#"
+            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">درباره
             ما</a></li>
       </ul>
 
@@ -44,6 +47,169 @@
       </a>
     </nav>
   </header>
+
+  <main>
+    <section class="max-w-[1400px] mx-auto mb-4">
+      <div class="relative w-full overflow-hidden rounded">
+        <div id="slier__content" class=" flex items-center justify-start">
+          <div class="min-w-full duration-300 ease-in transition-all"><img src="/assets/image/1.jpg" alt="imageSlider">
+          </div>
+          <div class="min-w-full duration-300 ease-in transition-all"><img src="/assets/image/2.jpg" alt=""></div>
+          <div class="min-w-full duration-300 ease-in transition-all"><img src="/assets/image/3.jpg" alt=""></div>
+          <div class="min-w-full duration-300 ease-in transition-all"><img src="/assets/image/4.jpg" alt=""></div>
+        </div>
+        <div class="absolute bottom-2 md:bottom-4  left-3 flex items-center">
+          <button class="prevSlide hidden md:flex items-center justify-center mx-3 w-9 h-9 bg-white rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 mx-auto w-6" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <button class="nextSlide flex items-center justify-center w-9 h-9 bg-white rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+        <div class="position--item absolute bottom-3 md:bottom-5 mx-3 flex items-center"></div>
+      </div>
+    </section>
+
+    <section class="max-w-[1400px] mx-auto bg-red-600 rounded">
+      <div class="w-full py-4 overflow-x-auto flex justify-start items-center no-scrollbar ">
+        <!--COVER CARD ITEM -->
+        <div class="min-w-[150px] max-w-[250px] h-full rounded-lg px-3  mr-4 flex flex-col justify-start items-center">
+          <div class="max-w-[100px] flex flex-col items-center justify-between">
+            <img src="/assets/image/amazing-typo.svg" alt="">
+            <img src="/assets/image/General.png" alt="">
+          </div>
+
+          <button
+            class="w-full h-full my-2 text-sm md:text-md mr-1 border-2 border-white text-white py-2 flex items-center justify-center  rounded-md">مشاهده
+            همه
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+
+        </div>
+        <!--CARD ITEM content product-->
+        <div
+          class="min-w-[200px] max-w-[250px] rounded-lg px-3 bg-white  mr-4 flex flex-col justify-start items-center">
+          <div class="max-w-[120px]">
+            <img src="/assets/image/Home/1.png" alt="">
+          </div>
+
+          <span class="mt-2 select-none text-sm">گوشی موبایل اپل مدل iphone 13-256g</span>
+
+          <div class="w-full flex flex-col items-end my-1 select-none">
+            <span class="line-through decoration-red-500 text-gray-500 text-sm">تومان 35.000.000</span>
+            <span class="text-red-500 font-bold text-sm md:text-md">تومان 30.000.000</span>
+          </div>
+
+          <div class="w-full flex items-center justify-between my-2">
+            <button
+              class="w-full text-sm md:text-md ml-1 border-2 border-gray-500 rounded-md text-gray-500 hover:border-gray-600 hover:text-gray-800 py-1">بازدید</button>
+            <button
+              class="w-full text-sm md:text-md mr-1 border-2 border-red-500 rounded-md text-white bg-red-500 py-1 hover:border-red-600 hover:bg-red-600">خرید</button>
+          </div>
+        </div>
+
+        <div
+          class="min-w-[200px] max-w-[250px] rounded-lg px-3 bg-white  mr-4 flex flex-col justify-start items-center">
+          <div class="max-w-[120px]">
+            <img src="/assets/image/Home/1.png" alt="">
+          </div>
+
+          <span class="mt-2 select-none text-sm">گوشی موبایل اپل مدل iphone 13-256g</span>
+
+          <div class="w-full flex flex-col items-end my-1 select-none">
+            <span class="line-through decoration-red-500 text-gray-500 text-sm">تومان 35.000.000</span>
+            <span class="text-red-500 font-bold text-sm md:text-md">تومان 30.000.000</span>
+          </div>
+
+          <div class="w-full flex items-center justify-between my-2">
+            <button
+              class="w-full text-sm md:text-md ml-1 border-2 border-gray-500 rounded-md text-gray-500 hover:border-gray-600 hover:text-gray-800 py-1">بازدید</button>
+            <button
+              class="w-full text-sm md:text-md mr-1 border-2 border-red-500 rounded-md text-white bg-red-500 py-1 hover:border-red-600 hover:bg-red-600">خرید</button>
+          </div>
+        </div>
+
+        <div
+          class="min-w-[200px] max-w-[250px] rounded-lg px-3 bg-white  mr-4 flex flex-col justify-start items-center">
+          <div class="max-w-[120px]">
+            <img src="/assets/image/Home/1.png" alt="">
+          </div>
+
+          <span class="mt-2 select-none text-sm">گوشی موبایل اپل مدل iphone 13-256g</span>
+
+          <div class="w-full flex flex-col items-end my-1 select-none">
+            <span class="line-through decoration-red-500 text-gray-500 text-sm">تومان 35.000.000</span>
+            <span class="text-red-500 font-bold text-sm md:text-md">تومان 30.000.000</span>
+          </div>
+
+          <div class="w-full flex items-center justify-between my-2">
+            <button
+              class="w-full text-sm md:text-md ml-1 border-2 border-gray-500 rounded-md text-gray-500 hover:border-gray-600 hover:text-gray-800 py-1">بازدید</button>
+            <button
+              class="w-full text-sm md:text-md mr-1 border-2 border-red-500 rounded-md text-white bg-red-500 py-1 hover:border-red-600 hover:bg-red-600">خرید</button>
+          </div>
+        </div>
+
+        <div
+          class="min-w-[200px] max-w-[250px] rounded-lg px-3 bg-white  mr-4 flex flex-col justify-start items-center">
+          <div class="max-w-[120px]">
+            <img src="/assets/image/Home/1.png" alt="">
+          </div>
+
+          <span class="mt-2 select-none text-sm">گوشی موبایل اپل مدل iphone 13-256g</span>
+
+          <div class="w-full flex flex-col items-end my-1 select-none">
+            <span class="line-through decoration-red-500 text-gray-500 text-sm">تومان 35.000.000</span>
+            <span class="text-red-500 font-bold text-sm md:text-md">تومان 30.000.000</span>
+          </div>
+
+          <div class="w-full flex items-center justify-between my-2">
+            <button
+              class="w-full text-sm md:text-md ml-1 border-2 border-gray-500 rounded-md text-gray-500 hover:border-gray-600 hover:text-gray-800 py-1">بازدید</button>
+            <button
+              class="w-full text-sm md:text-md mr-1 border-2 border-red-500 rounded-md text-white bg-red-500 py-1 hover:border-red-600 hover:bg-red-600">خرید</button>
+          </div>
+        </div>
+
+        <div
+          class="min-w-[200px] max-w-[250px] rounded-lg px-3 bg-white  mr-4 flex flex-col justify-start items-center">
+          <div class="max-w-[120px]">
+            <img src="/assets/image/Home/1.png" alt="">
+          </div>
+
+          <span class="mt-2 select-none text-sm">گوشی موبایل اپل مدل iphone 13-256g</span>
+
+          <div class="w-full flex flex-col items-end my-1 select-none">
+            <span class="line-through decoration-red-500 text-gray-500 text-sm">تومان 35.000.000</span>
+            <span class="text-red-500 font-bold text-sm md:text-md">تومان 30.000.000</span>
+          </div>
+
+          <div class="w-full flex items-center justify-between my-2">
+            <button
+              class="w-full text-sm md:text-md ml-1 border-2 border-gray-500 rounded-md text-gray-500 hover:border-gray-600 hover:text-gray-800 py-1">بازدید</button>
+            <button
+              class="w-full text-sm md:text-md mr-1 border-2 border-red-500 rounded-md text-white bg-red-500 py-1 hover:border-red-600 hover:bg-red-600">خرید</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="/src/js/script.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>

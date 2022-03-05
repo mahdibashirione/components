@@ -14,8 +14,10 @@
 
   <header class="w-full sticky top-0 bg-white z-10 shadow-md">
     <nav class="container flex relative justify-between items-center flex-wrap p-2">
-      <div class="lg:hidden cursor-pointer">
-        <i class="fa-solid fa-bars text-3xl"></i>
+      <div class="btnNav lg:hidden cursor-pointer flex flex-col items-center rounded-md">
+        <div class="w-6 h-[3px] bg-slate-900 rounded-lg"></div>
+        <div class="w-6 h-[3px] bg-slate-900 rounded-lg my-[6px]"></div>
+        <div class="w-6 h-[3px] bg-slate-900 rounded-lg"></div>
       </div>
 
       <div class="hidden lg:block">
@@ -23,7 +25,7 @@
       </div>
 
       <ul
-        class="hidden w-full bg-slate-50 absolute right-0 top-full px-4 overflow-hidden md:bg-white md:relative md:w-auto md:flex items-center justify-center">
+        class="nav hidden w-full bg-slate-50 absolute right-0 top-full px-4 overflow-hidden md:bg-white md:relative md:w-auto md:flex items-center justify-center">
         <li class="w-full lg:w-auto lg:mx-4"><a href="#"
             class="py-2 block hover:text-purple-800 whitespace-nowrap ">خانه</a>
         </li>
@@ -46,6 +48,7 @@
     </nav>
   </header>
 
+  <script src="/src/js/script.js"></script>
 </body>
 
 </html>
