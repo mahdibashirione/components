@@ -10,46 +10,64 @@
   <title>Document</title>
 </head>
 
-<body>
-  <header class="w-full sticky top-0 bg-white z-10 shadow-md">
-    <nav class="container flex relative justify-between items-center flex-wrap p-3">
-      <div class="btnNav lg:hidden cursor-pointer flex flex-col items-center rounded-md">
-        <div class="w-6 h-[3px] bg-slate-900 rounded-lg transition-all ease-in duration-200 "></div>
-        <div class="w-6 h-[3px] bg-slate-900 rounded-lg transition-all ease-in duration-200 my-[6px] "></div>
-        <div class="w-6 h-[3px] bg-slate-900 rounded-lg transition-all ease-in duration-200 "></div>
+<body class="bg-gray-100">
+
+  <!--? DESKTOP NAVBAR -->
+  <nav class="hidden bg-white w-full sticky top-0 shadow z-10 h-[60px] md:flex items-center">
+    <div class="container flex px-2">
+      <div class="w-2/3">
+        <ul class="h-full flex">
+          <li class="h-full"><a class="flex items-center h-full" href="#"><img class="w-full"
+                src="../../assets/image/Logotise.png" alt=""></a>
+          </li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">خانه</a></li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">محصولات</a></li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">درباره ما</a></li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">پشتیبانی</a></li>
+        </ul>
       </div>
-
-      <div class="hidden lg:block">
-        <img src="/assets/svg/fh-logo.svg" alt="logoSite">
+      <div class="w-1/3 flex items-center justify-between">
+        <div class="relative">
+          <label for="search">
+            <img src="../../assets/svg/search-normal.svg" alt="iconSearch" class="w-6 h-6 absolute top-2 right-3">
+          </label>
+          <input id="search" type="search" placeholder="جستوجو...."
+            class="max-w-[250px] w-full text-md font-sans pr-10 outline-none rounded-md border-slate-500 border-none bg-slate-200">
+        </div>
+        <a href="#" class="mr-2 block">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+          </svg>
+        </a>
       </div>
+    </div>
+  </nav>
 
-      <ul
-        class="nav hidden w-full bg-slate-50 absolute right-0 top-full px-4 overflow-hidden md:bg-white md:relative md:w-auto md:flex items-center justify-center">
-        <li class="w-full lg:w-auto lg:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">خانه</a>
-        </li>
-        <li class="w-full md:w-auto md:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">فروشگاه</a>
-        </li>
-        <li class="w-full md:w-auto md:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">سبد
-            خرید</a></li>
-        <li class="w-full md:w-auto md:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">پشتیبانی</a></li>
-        <li class="w-full md:w-auto md:mx-4"><a href="#"
-            class="py-2 block hover:text-purple-800 whitespace-nowrap font-bold ">درباره
-            ما</a></li>
-      </ul>
-
-      <a href="#" class="flex items-center justify-center">
-        <i class="fa-solid fa-arrow-right-to-bracket ml-2 text-lg"></i>
-        Login
-      </a>
-    </nav>
-  </header>
+  <!--? App Bar -->
+  <div class="flex md:hidden items-center justify-between mt-10 px-4">
+    <div class="w-1/3 flex justify-start">
+      <div class="rotate-90 w-10 h-10 bg-white shadow-lg rounded-md flex items-center justify-center cursor-pointer">
+        <img class="w-5" src="../../assets/svg/Vector.svg" alt="iconSearch">
+      </div>
+    </div>
+    <div class=" w-1/3 font-sans text-lg whitespace-nowrap select-none flex items-center justify-center">
+      Home
+    </div>
+    <div class="w-1/3 flex justify-end">
+      <div class="w-10 h-10 bg-white shadow-lg rounded-md flex items-center justify-center cursor-pointer">
+        <img src="../../assets/svg/search-normal.svg" alt="iconSearch">
+      </div>
+    </div>
+  </div>
 
   <main>
-    <section class="max-w-[1400px] mx-auto mb-4">
+    <section class="max-w-[1400px] mx-auto mb-4 mt-8">
       <div class="relative w-full overflow-hidden rounded">
         <div id="slier__content" class=" flex items-center justify-start">
           <div class="min-w-full duration-300 ease-in transition-all"><img src="/assets/image/1.jpg" alt="imageSlider">
@@ -207,6 +225,71 @@
       </div>
     </section>
   </main>
+
+  <!--? BUTTON NAVIGATION -->
+  <div class="md:hidden w-full h-16 bg-white fixed bottom-0 right-0 px-4 shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)]">
+    <nav class="h-full">
+      <ul x-data="{btnNavigation : 1}" class="w-full flex items-center justify-between gap-x-2 h-full">
+        <li @click="btnNavigation = 1 " class="h-full">
+          <a href="./index.html" class="flex items-center h-full">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M26.72 9.09358L19.04 3.72024C16.9467 2.25358 13.7333 2.33358 11.72 3.89358L5.03999 9.10691C3.70665 10.1469 2.65332 12.2802 2.65332 13.9602V23.1602C2.65332 26.5602 5.41332 29.3336 8.81332 29.3336H23.1867C26.5867 29.3336 29.3467 26.5736 29.3467 23.1736V14.1336C29.3467 12.3336 28.1867 10.1202 26.72 9.09358ZM17 24.0002C17 24.5469 16.5467 25.0002 16 25.0002C15.4533 25.0002 15 24.5469 15 24.0002V20.0002C15 19.4536 15.4533 19.0002 16 19.0002C16.5467 19.0002 17 19.4536 17 20.0002V24.0002Z"
+                class="fill-slate-800" :fill-opacity="btnNavigation == 1 ? '1' : '0.3' " />
+            </svg>
+            <span class="ml-2"></span>
+            </span>
+            <span x-show="btnNavigation == 1" class="text-lg text-slate-800">خانه</span>
+          </a>
+        </li>
+        <li @click="btnNavigation = 2" class="h-full">
+          <a href="./page/home.html" class="flex items-center h-full">
+            <span class="ml-2">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.2568 2.8335H7.56516C4.46266 2.8335 2.8335 4.46266 2.8335 7.551V10.2427C2.8335 13.331 4.46266 14.9602 7.55099 14.9602H10.2427C13.331 14.9602 14.9602 13.331 14.9602 10.2427V7.551C14.9743 4.46266 13.3452 2.8335 10.2568 2.8335Z"
+                  class="fill-slate-800" :fill-opacity="btnNavigation == 2 ? '1' : '0.3' " />
+                <path
+                  d="M26.4492 2.8335H23.7575C20.6692 2.8335 19.04 4.46266 19.04 7.551V10.2427C19.04 13.331 20.6692 14.9602 23.7575 14.9602H26.4492C29.5375 14.9602 31.1667 13.331 31.1667 10.2427V7.551C31.1667 4.46266 29.5375 2.8335 26.4492 2.8335Z"
+                  class="fill-slate-800" :fill-opacity="btnNavigation == 2 ? '1' : '0.3' " />
+                <path
+                  d="M26.4492 19.0259H23.7575C20.6692 19.0259 19.04 20.655 19.04 23.7434V26.435C19.04 29.5234 20.6692 31.1525 23.7575 31.1525H26.4492C29.5375 31.1525 31.1667 29.5234 31.1667 26.435V23.7434C31.1667 20.655 29.5375 19.0259 26.4492 19.0259Z"
+                  class="fill-slate-800" :fill-opacity="btnNavigation == 2 ? '1' : '0.3' " />
+                <path
+                  d="M10.2568 19.0259H7.56516C4.46266 19.0259 2.8335 20.655 2.8335 23.7434V26.435C2.8335 29.5375 4.46266 31.1667 7.55099 31.1667H10.2427C13.331 31.1667 14.9602 29.5375 14.9602 26.4492V23.7575C14.9743 20.655 13.3452 19.0259 10.2568 19.0259Z"
+                  class="fill-slate-800" :fill-opacity="btnNavigation == 2 ? '1' : '0.3' " />
+              </svg>
+            </span>
+            <span x-show="btnNavigation == 2" class="text-lg text-slate-800">دسته بندی</span>
+          </a>
+        </li>
+        <li @click="btnNavigation = 3" class="h-full">
+          <a href="./page/cart.html" class="flex items-center h-full">
+            <span class="ml-2">
+              <svg width="26" height="30" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24.2766 10.6934C23.3275 9.64506 21.8966 9.0359 19.9133 8.8234V7.74673C19.9133 5.8059 19.0916 3.9359 17.6466 2.63256C16.1875 1.3009 14.2891 0.677562 12.32 0.861729C8.93413 1.18756 6.08663 4.46006 6.08663 8.00173V8.8234C4.1033 9.0359 2.67247 9.64506 1.7233 10.6934C0.349132 12.2234 0.391632 14.2634 0.547465 15.6801L1.53913 23.5709C1.83663 26.3334 2.9558 29.1667 9.04747 29.1667H16.9525C23.0441 29.1667 24.1633 26.3334 24.4608 23.5851L25.4525 15.6659C25.6083 14.2634 25.6366 12.2234 24.2766 10.6934ZM12.5183 2.8309C13.935 2.7034 15.2808 3.14256 16.3291 4.09173C17.3633 5.02673 17.9441 6.3584 17.9441 7.74673V8.7384H8.0558V8.00173C8.0558 5.48006 10.1383 3.05756 12.5183 2.8309ZM7.9283 16.6292H7.91413C7.13497 16.6292 6.49747 15.9917 6.49747 15.2126C6.49747 14.4334 7.13497 13.7959 7.91413 13.7959C8.70747 13.7959 9.34497 14.4334 9.34497 15.2126C9.34497 15.9917 8.70747 16.6292 7.9283 16.6292ZM17.845 16.6292H17.8308C17.0516 16.6292 16.4141 15.9917 16.4141 15.2126C16.4141 14.4334 17.0516 13.7959 17.8308 13.7959C18.6241 13.7959 19.2616 14.4334 19.2616 15.2126C19.2616 15.9917 18.6241 16.6292 17.845 16.6292Z"
+                  class="fill-slate-800" :fill-opacity="btnNavigation == 3 ? '1' : '0.3' " />
+              </svg>
+            </span>
+            <span x-show="btnNavigation == 3" class="text-lg text-slate-800">سبدخرید</span>
+          </a>
+        </li>
+        <li @click="btnNavigation = 4" class="h-full">
+          <a href="#" class="flex items-center h-full">
+            <span class="mr-2">
+              <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.8335 0.333496C18.3224 0.333496 16.0779 1.55572 14.6779 3.42239C13.2779 1.55572 11.0335 0.333496 8.52239 0.333496C4.27794 0.333496 0.833496 3.80016 0.833496 8.06683C0.833496 9.71127 1.10016 11.2446 1.54461 12.6446C3.72238 19.5557 10.4779 23.7113 13.8113 24.8446C14.2779 25.0002 15.0557 25.0002 15.5224 24.8446C18.8557 23.7113 25.6113 19.5779 27.7891 12.6446C28.2557 11.2224 28.5002 9.71127 28.5002 8.06683C28.5224 3.80016 25.0779 0.333496 20.8335 0.333496Z"
+                  class="fill-slate-800" :fill-opacity="btnNavigation == 4 ? '1' : '0.3' " />
+              </svg>
+            </span>
+            <span x-show="btnNavigation == 4" class="text-lg text-slate-800">سبدخرید</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
   <script src="/src/js/script.js"></script>
   <script src="//unpkg.com/alpinejs" defer></script>

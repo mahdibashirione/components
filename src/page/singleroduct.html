@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/css/outStyle.css">
+  <title>Products</title>
+</head>
+
+<body class="bg-gray-100">
+  <!--? DESKTOP NAVBAR -->
+  <nav class="hidden bg-white w-full sticky top-0 shadow z-10 h-[60px] md:flex items-center">
+    <div class="container flex px-2">
+      <div class="w-2/3">
+        <ul class="h-full flex">
+          <li class="h-full"><a class="flex items-center h-full" href="#"><img class="w-full"
+                src="../../assets/image/Logotise.png" alt=""></a>
+          </li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">خانه</a></li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">محصولات</a></li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">درباره ما</a></li>
+          <li class="h-full"><a class="flex items-center h-full mr-6 text-lg font-sans hover:text-orange-500"
+              href="#">پشتیبانی</a></li>
+        </ul>
+      </div>
+      <div class="w-1/3 flex items-center justify-between">
+        <div class="relative">
+          <label for="search">
+            <img src="../../assets/svg/search-normal.svg" alt="iconSearch" class="w-6 h-6 absolute top-2 right-3">
+          </label>
+          <input id="search" type="search" placeholder="جستوجو...."
+            class="max-w-[250px] w-full text-md font-sans pr-10 outline-none rounded-md border-slate-500 border-none bg-slate-200">
+        </div>
+        <a href="#" class="mr-2 block">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!--? App Bar -->
+  <div class="flex md:hidden items-center justify-between mt-10 px-4">
+    <div class="w-1/3 flex justify-start">
+      <div class="rotate-90 w-10 h-10 bg-white shadow-lg rounded-md flex items-center justify-center cursor-pointer">
+        <img class="w-5" src="../../assets/svg/Vector.svg" alt="iconSearch">
+      </div>
+    </div>
+    <div class=" w-1/3 font-sans text-lg whitespace-nowrap select-none flex items-center justify-center">
+      گوشی ایفون 13
+      128 گیگ
+    </div>
+    <div class="w-1/3 flex justify-end">
+      <div class="w-10 h-10 bg-white shadow-lg rounded-md flex items-center justify-center cursor-pointer">
+        <img src="../../assets/svg/search-normal.svg" alt="iconSearch">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="grid grid-cols-12 md:gap-4 md:grid-rows-[55px_minmax(500px,1fr)] mt-4 container">
+    <!-- sidebar -->
+    <div class="col-span-3 row-span-2 hidden md:block">
+      <div class="bg-white rounded-lg p-6 w-full max-h-[calc(100vh_-_120px)] overflow-y-auto sticky top-[75px]">
+        <div class="font-sans font-bold text-xl text-orange-400">دسته بندی ها</div>
+        <!-- filter categories -->
+        <ul x-data="{categories : 1}">
+          <li @click="categories = 1" class="cursor-pointer flex items-center mt-5">
+            <svg width="24" height="26" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 4.75V12.25C13 15.25 12.25 16 9.25 16H4.75C1.75 16 1 15.25 1 12.25V4.75C1 1.75 1.75 1 4.75 1H9.25C12.25 1 13 1.75 13 4.75Z"
+                class="stroke-slate-400" stroke="#222F5D" stroke-width="1.125" stroke-linecap="round"
+                :class="categories == 1 ?' stroke-slate-800' : '' " stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M8.5 3.625H5.5" stroke="#222F5D" stroke-width="1.125"
+                :class="categories == 1 ?' stroke-slate-800' : '' " stroke-linecap="round" stroke-linejoin="round" />
+              <path class="stroke-slate-400"
+                d="M6.99984 13.825C7.64187 13.825 8.16234 13.3045 8.16234 12.6625C8.16234 12.0205 7.64187 11.5 6.99984 11.5C6.35781 11.5 5.83734 12.0205 5.83734 12.6625C5.83734 13.3045 6.35781 13.825 6.99984 13.825Z"
+                :class="categories == 1 ?' stroke-slate-800' : '' " stroke="#222F5D" stroke-width="1.125"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span :class="categories == 1 ?'text-slate-900' : '' "
+              class="font-sans text-lg text-slate-400 mr-2 select-none">تلفن همراه</span>
+          </li>
+          <li @click="categories = 2" class="cursor-pointer flex items-center mt-5">
+            <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="stroke-slate-400"
+                d="M4.29331 1.3335H11.7C14.0733 1.3335 14.6666 1.92683 14.6666 4.2935V8.5135C14.6666 10.8868 14.0733 11.4735 11.7066 11.4735H4.29331C1.92665 11.4802 1.33331 10.8868 1.33331 8.52016V4.2935C1.33331 1.92683 1.92665 1.3335 4.29331 1.3335Z"
+                :class="categories == 2 ?' stroke-slate-800' : '' " stroke="#222F5D" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M8 11.48V14.6666" stroke="#222F5D" stroke-linecap="round"
+                :class="categories == 2 ?' stroke-slate-800' : '' " stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M1.33331 8.6665H14.6666" stroke="#222F5D" stroke-linecap="round"
+                :class="categories == 2 ?' stroke-slate-800' : '' " stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M5 14.6665H11" stroke="#222F5D" stroke-linecap="round"
+                :class="categories == 2 ?' stroke-slate-800' : '' " stroke-linejoin="round" />
+            </svg>
+            <span :class="categories == 2 ?' text-slate-900' : '' "
+              class="font-sans text-lg text-slate-400 mr-2 select-none">لپ تاپ</span>
+          </li>
+          <li @click="categories = 3" class="cursor-pointer flex items-center mt-5">
+            <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="stroke-slate-400"
+                d="M5.66646 12.6668H10.3331C11.8865 12.6668 12.6665 11.8868 12.6665 10.3335V5.66683C12.6665 4.1135 11.8865 3.3335 10.3331 3.3335H5.66646C4.11313 3.3335 3.33313 4.1135 3.33313 5.66683V10.3335C3.33313 11.8868 4.11313 12.6668 5.66646 12.6668Z"
+                :class="categories == 3 ?' stroke-slate-800' : '' " stroke="#222F5D" stroke-miterlimit="10"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M10.6665 1.3335H5.33313" stroke="#222F5D" stroke-miterlimit="10"
+                :class="categories == 3 ?' stroke-slate-800' : '' " stroke-linecap="round" stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M10.6665 14.6665H5.33313" stroke="#222F5D" stroke-miterlimit="10"
+                :class="categories == 3 ?' stroke-slate-800' : '' " stroke-linecap="round" stroke-linejoin="round" />
+              <path class="stroke-slate-400" d="M7.66687 6.3335V8.3335H9.66687" stroke="#222F5D" stroke-miterlimit="10"
+                :class="categories == 3 ?' stroke-slate-800' : '' " stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span :class="categories == 3 ?' text-slate-900' : '' "
+              class="font-sans text-lg text-slate-400 mr-2 select-none">ساعت هوشمند</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Bread Crumbs -->
+    <div class=" md:bg-white rounded-lg col-span-9 flex items-center">
+      <div class="flex items-center my-7 px-4 w-full overflow-hidden">
+        <span class="font-sans text-sm text-orange-400">تلفن همراه</span>
+        <span class="mx-2">
+          <svg width="8" height="11" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="stroke-slate-800"
+              d="M0.944605 4.20001L0.950718 4.19373L0.956607 4.18725C1.32573 3.78078 2.02428 3.21446 2.78795 2.68511C3.55136 2.15595 4.3254 1.70144 4.83012 1.49807L4.83016 1.49817L4.83934 1.49425C4.9071 1.46536 5.04003 1.41502 5.18119 1.3714C5.32581 1.32672 5.43223 1.304 5.48132 1.2999C5.61125 1.30172 5.73419 1.33117 5.85587 1.39173C6.003 1.4793 6.12099 1.61406 6.18635 1.76876C6.20654 1.82465 6.24286 1.96707 6.2795 2.13162C6.29674 2.20908 6.31191 2.28146 6.32269 2.33467C6.32679 2.35489 6.33016 2.3719 6.33272 2.38504L6.33888 2.41907C6.43995 2.97739 6.5 3.92131 6.5 4.9942C6.5 5.99331 6.44261 6.893 6.36023 7.47422C6.35734 7.48646 6.3548 7.4984 6.35289 7.50753C6.348 7.531 6.34187 7.56236 6.3355 7.59493L6.33512 7.59688L6.33508 7.59707C6.3215 7.66652 6.30404 7.75588 6.28346 7.85134C6.26272 7.94755 6.23997 8.04456 6.2166 8.12825C6.20496 8.16994 6.19405 8.20513 6.18419 8.23328C6.17932 8.24718 6.17515 8.25811 6.17176 8.26634L6.16778 8.27562C6.16699 8.27735 6.16653 8.27831 6.1664 8.27857C6.1664 8.27857 6.16639 8.27858 6.16639 8.27858C6.02896 8.54694 5.76906 8.69981 5.50794 8.69981H5.48063C5.45851 8.69813 5.40766 8.69019 5.32578 8.66857C5.24294 8.64671 5.15072 8.61694 5.06198 8.58535C5.02814 8.5733 4.9956 8.56127 4.9652 8.54971L4.73986 8.4536C4.25814 8.24812 3.50692 7.8079 2.7622 7.29375C2.01557 6.77828 1.32584 6.2231 0.948006 5.80297L0.940361 5.79447L0.932428 5.78642L0.932424 5.78641L0.93239 5.78638L0.932366 5.78635L0.932336 5.78632L0.93219 5.78617L0.930758 5.78471L0.924312 5.77811L0.89904 5.75191C0.87732 5.72922 0.847428 5.69759 0.814819 5.66193C0.743684 5.58413 0.680493 5.50967 0.650976 5.46665L0.645464 5.45861L0.639642 5.4508C0.550658 5.33135 0.5 5.17339 0.5 5.0047C0.5 4.81956 0.55263 4.65736 0.644446 4.52729C0.6655 4.50433 0.691702 4.47505 0.717769 4.44592C0.731059 4.43107 0.744313 4.41626 0.756832 4.40234C0.815459 4.33717 0.882201 4.26406 0.944605 4.20001Z" />
+          </svg>
+        </span>
+        <span class="font-sans text-sm text-orange-400">برند آیفون</span>
+        <span class="mx-2">
+          <svg width="8" height="11" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="stroke-slate-800"
+              d="M0.944605 4.20001L0.950718 4.19373L0.956607 4.18725C1.32573 3.78078 2.02428 3.21446 2.78795 2.68511C3.55136 2.15595 4.3254 1.70144 4.83012 1.49807L4.83016 1.49817L4.83934 1.49425C4.9071 1.46536 5.04003 1.41502 5.18119 1.3714C5.32581 1.32672 5.43223 1.304 5.48132 1.2999C5.61125 1.30172 5.73419 1.33117 5.85587 1.39173C6.003 1.4793 6.12099 1.61406 6.18635 1.76876C6.20654 1.82465 6.24286 1.96707 6.2795 2.13162C6.29674 2.20908 6.31191 2.28146 6.32269 2.33467C6.32679 2.35489 6.33016 2.3719 6.33272 2.38504L6.33888 2.41907C6.43995 2.97739 6.5 3.92131 6.5 4.9942C6.5 5.99331 6.44261 6.893 6.36023 7.47422C6.35734 7.48646 6.3548 7.4984 6.35289 7.50753C6.348 7.531 6.34187 7.56236 6.3355 7.59493L6.33512 7.59688L6.33508 7.59707C6.3215 7.66652 6.30404 7.75588 6.28346 7.85134C6.26272 7.94755 6.23997 8.04456 6.2166 8.12825C6.20496 8.16994 6.19405 8.20513 6.18419 8.23328C6.17932 8.24718 6.17515 8.25811 6.17176 8.26634L6.16778 8.27562C6.16699 8.27735 6.16653 8.27831 6.1664 8.27857C6.1664 8.27857 6.16639 8.27858 6.16639 8.27858C6.02896 8.54694 5.76906 8.69981 5.50794 8.69981H5.48063C5.45851 8.69813 5.40766 8.69019 5.32578 8.66857C5.24294 8.64671 5.15072 8.61694 5.06198 8.58535C5.02814 8.5733 4.9956 8.56127 4.9652 8.54971L4.73986 8.4536C4.25814 8.24812 3.50692 7.8079 2.7622 7.29375C2.01557 6.77828 1.32584 6.2231 0.948006 5.80297L0.940361 5.79447L0.932428 5.78642L0.932424 5.78641L0.93239 5.78638L0.932366 5.78635L0.932336 5.78632L0.93219 5.78617L0.930758 5.78471L0.924312 5.77811L0.89904 5.75191C0.87732 5.72922 0.847428 5.69759 0.814819 5.66193C0.743684 5.58413 0.680493 5.50967 0.650976 5.46665L0.645464 5.45861L0.639642 5.4508C0.550658 5.33135 0.5 5.17339 0.5 5.0047C0.5 4.81956 0.55263 4.65736 0.644446 4.52729C0.6655 4.50433 0.691702 4.47505 0.717769 4.44592C0.731059 4.43107 0.744313 4.41626 0.756832 4.40234C0.815459 4.33717 0.882201 4.26406 0.944605 4.20001Z" />
+          </svg>
+        </span>
+        <span class="font-sans text-sm text-slate-500">ایفون 13</span>
+      </div>
+    </div>
+    <!-- product section -->
+    <div class="col-span-12 md:col-span-9 p-2 md:bg-white rounded-lg">
+      <div class="w-full flex flex-col lg:flex-row items-center">
+        <!-- right -->
+        <div class="lg:w-2/3 flex flex-col lg:flex-row items-center">
+          <div class="max-w-[200px] lg:max-w-[240px] lg:ml-8 lg:mr-4">
+            <img class="w-full lg:hidden" src="../../assets/image/Single Product/Gallery - 4.png" alt="imageProduct">
+            <img class="w-full hidden lg:block" src="../../assets/image/Single Product/Gallery.png" alt="imageProduct">
+          </div>
+          <div class="w-full flex items-center lg:items-start justify-center flex-col">
+            <!-- Name Product -->
+            <h2 class="font-sans font-bold text-slate-800 text-lg mt-11">
+              گوشی ایفون 13
+              128 گیگابایت
+            </h2>
+            <span class="font-sans text-slate-400 text-md mt-2 mb-10">Apple Iphone 13 128 GB</span>
+            <!-- Color Product -->
+            <div class="flex items-center">
+              <span class="font-sans text-lg text-slate-800">انتخاب رنگ :</span>
+              <div x-data="{ color: 'red' }" class="flex items-center justify-center mr-8">
+                <div @click="color = 'red'"
+                  class="border-2 border-white -mr-1 w-6 h-6 flex items-center justify-center rounded-full bg-red-500">
+                  <svg x-show="color=='red'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div @click="color = 'purple'"
+                  class="border-2 border-white -mr-1 w-6 h-6 flex items-center justify-center rounded-full bg-purple-500">
+                  <svg x-show="color=='purple'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div @click="color = 'blue'"
+                  class="border-2 border-white -mr-1 w-6 h-6 flex items-center justify-center rounded-full bg-blue-500">
+                  <svg x-show="color=='blue'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div @click="color = 'yellow'"
+                  class="border-2 border-white -mr-1 w-6 h-6 flex items-center justify-center rounded-full bg-yellow-500">
+                  <svg x-show="color=='yellow'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!-- Desc Product -->
+            <div class="flex items-center justify-center lg:hidden flex-wrap mt-4 mb-7">
+
+              <div class="flex items-center mt-4">
+                <span class="flex items-center font-sans text-slate-800 text-sm font-bold">
+                  <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.75586 6.54492V9.16409C1.75586 11.7833 2.80586 12.8333 5.42503 12.8333H8.56919C11.1884 12.8333 12.2384 11.7833 12.2384 9.16409V6.54492"
+                      stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M7.00012 6.99935C8.06762 6.99935 8.85512 6.13018 8.75012 5.06268L8.36512 1.16602H5.64095L5.25012 5.06268C5.14512 6.13018 5.93262 6.99935 7.00012 6.99935Z"
+                      stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.681 6.99935C11.8593 6.99935 12.7226 6.04268 12.606 4.87018L12.4426 3.26602C12.2326 1.74935 11.6493 1.16602 10.121 1.16602H8.3418L8.75013 5.25518C8.8493 6.21768 9.71846 6.99935 10.681 6.99935Z"
+                      stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M3.29005 6.99935C4.25255 6.99935 5.12172 6.21768 5.21505 5.25518L5.34339 3.96602L5.62339 1.16602H3.84422C2.31589 1.16602 1.73255 1.74935 1.52255 3.26602L1.36505 4.87018C1.24839 6.04268 2.11172 6.99935 3.29005 6.99935Z"
+                      stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M7.00033 9.91602C6.02616 9.91602 5.54199 10.4002 5.54199 11.3743V12.8327H8.45866V11.3743C8.45866 10.4002 7.97449 9.91602 7.00033 9.91602Z"
+                      stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  دیجی تایز :
+                </span>
+                <span class="font-sans text-slate-500 text-sm mr-2">فروشنده</span>
+              </div>
+              <div class="flex items-center mr-4 mt-4">
+                <span class="flex items-center font-sans text-slate-800 text-sm font-bold">
+                  <svg width="18" height="18" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.43053 1.57973L3.89594 2.91139C3.08136 3.21598 2.41553 4.17931 2.41553 5.04348V10.3064C2.41553 11.1422 2.96803 12.2401 3.64094 12.7431L6.68678 15.0168C7.68553 15.7676 9.32886 15.7676 10.3276 15.0168L13.3734 12.7431C14.0464 12.2401 14.5989 11.1422 14.5989 10.3064V5.04348C14.5989 4.17223 13.933 3.20889 13.1184 2.90431L9.58386 1.57973C8.98178 1.36014 8.01844 1.36014 7.43053 1.57973Z"
+                      stroke="#222F5D" stroke-width="1.0625" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  گارانتی :
+                </span>
+                <span class="font-sans text-slate-500 text-sm mr-2">18 ماه گارانتی</span>
+              </div>
+              <div class="flex items-center mr-4 lg:mr-0 mt-4">
+                <span class="flex items-center font-sans text-slate-800 text-sm font-bold">
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.0002 1.33301V7.99967C10.0002 8.73301 9.40016 9.33301 8.66683 9.33301H1.3335V5.07967C1.82016 5.65967 2.56685 6.01967 3.39351 5.99967C4.06685 5.98634 4.6735 5.72634 5.12683 5.29301C5.3335 5.11968 5.50684 4.89967 5.64018 4.65967C5.88018 4.253 6.0135 3.77299 6.00016 3.27299C5.98016 2.49299 5.63351 1.80634 5.09351 1.33301H10.0002Z"
+                      stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M14.6668 9.33301V11.333C14.6668 12.4397 13.7735 13.333 12.6668 13.333H12.0002C12.0002 12.5997 11.4002 11.9997 10.6668 11.9997C9.9335 11.9997 9.3335 12.5997 9.3335 13.333H6.66683C6.66683 12.5997 6.06683 11.9997 5.3335 11.9997C4.60016 11.9997 4.00016 12.5997 4.00016 13.333H3.3335C2.22683 13.333 1.3335 12.4397 1.3335 11.333V9.33301H8.66683C9.40016 9.33301 10.0002 8.73301 10.0002 7.99967V3.33301H11.2268C11.7068 3.33301 12.1468 3.59301 12.3868 4.00635L13.5268 5.99967H12.6668C12.3002 5.99967 12.0002 6.29967 12.0002 6.66634V8.66634C12.0002 9.03301 12.3002 9.33301 12.6668 9.33301H14.6668Z"
+                      stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M5.33333 14.6667C6.06971 14.6667 6.66667 14.0697 6.66667 13.3333C6.66667 12.597 6.06971 12 5.33333 12C4.59695 12 4 12.597 4 13.3333C4 14.0697 4.59695 14.6667 5.33333 14.6667Z"
+                      stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.6668 14.6667C11.4032 14.6667 12.0002 14.0697 12.0002 13.3333C12.0002 12.597 11.4032 12 10.6668 12C9.93045 12 9.3335 12.597 9.3335 13.3333C9.3335 14.0697 9.93045 14.6667 10.6668 14.6667Z"
+                      stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M14.6667 8V9.33333H12.6667C12.3 9.33333 12 9.03333 12 8.66667V6.66667C12 6.3 12.3 6 12.6667 6H13.5267L14.6667 8Z"
+                      stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M6.00033 3.33268C6.00033 4.13268 5.647 4.84602 5.09367 5.33268C4.62034 5.74602 4.00699 5.99935 3.33366 5.99935C1.86033 5.99935 0.666992 4.80602 0.666992 3.33268C0.666992 2.49268 1.05366 1.73935 1.66699 1.25269C2.12699 0.886019 2.70699 0.666016 3.33366 0.666016C4.80699 0.666016 6.00033 1.85935 6.00033 3.33268Z"
+                      stroke="#222F5D" stroke-width="1.125" stroke-miterlimit="10" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M3.50033 2.49902V3.49902L2.66699 3.99902" stroke="#222F5D" stroke-width="1.125"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+
+                  ارسال توسط :
+                </span>
+                <span class="font-sans text-slate-500 text-sm mr-2">انبار تهران</span>
+              </div>
+
+            </div>
+            <!-- Property Product -->
+            <div
+              class="w-[calc(100%_-_40px)] lg:w-full bg-white rounded-lg p-4 md:p-0 md:mt-6 flex flex-col items-start">
+              <h3 class="font-sans font-bold text-slate-800 text-lg">ویژگی های محصول :</h3>
+              <div class="flex flex-col mt-4">
+                <span class="font-sans text-slate-800 text-md">
+                  <span class="w-2 h-2 rounded-full bg-orange-400 inline-block"></span>
+                  حافظه داخلی :
+                </span>
+                <span class="font-sans font-bold text-slate-800 text-md mr-3">128 گیگابایت</span>
+              </div>
+              <div class="flex flex-col mt-2">
+                <span class="font-sans text-slate-800 text-md">
+                  <span class="w-2 h-2 rounded-full bg-orange-400 inline-block"></span>
+                  اندازه صفحه نمایش :
+                </span>
+                <span class="font-sans font-bold text-slate-800 text-md mr-3">6.5 اینچ و بزرگ تر</span>
+              </div>
+              <div class="flex flex-col mt-2">
+                <span class="font-sans text-slate-800 text-md">
+                  <span class="w-2 h-2 rounded-full bg-orange-400 inline-block"></span>
+                  شبکه های ارتباطی :
+                </span>
+                <span class="font-sans font-bold text-slate-800 text-md mr-3">2G 3G 4G 5G</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- left -->
+        <div class="hidden h-full lg:flex w-1/3 justify-end items-start">
+          <div class="flex flex-col bg-gray-100 rounded-lg p-4 w-[300px]">
+            <div class="flex items-center mt-6">
+              <span class="flex items-center font-sans text-slate-800 text-sm font-bold">
+                <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1.75586 6.54492V9.16409C1.75586 11.7833 2.80586 12.8333 5.42503 12.8333H8.56919C11.1884 12.8333 12.2384 11.7833 12.2384 9.16409V6.54492"
+                    stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M7.00012 6.99935C8.06762 6.99935 8.85512 6.13018 8.75012 5.06268L8.36512 1.16602H5.64095L5.25012 5.06268C5.14512 6.13018 5.93262 6.99935 7.00012 6.99935Z"
+                    stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10.681 6.99935C11.8593 6.99935 12.7226 6.04268 12.606 4.87018L12.4426 3.26602C12.2326 1.74935 11.6493 1.16602 10.121 1.16602H8.3418L8.75013 5.25518C8.8493 6.21768 9.71846 6.99935 10.681 6.99935Z"
+                    stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M3.29005 6.99935C4.25255 6.99935 5.12172 6.21768 5.21505 5.25518L5.34339 3.96602L5.62339 1.16602H3.84422C2.31589 1.16602 1.73255 1.74935 1.52255 3.26602L1.36505 4.87018C1.24839 6.04268 2.11172 6.99935 3.29005 6.99935Z"
+                    stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M7.00033 9.91602C6.02616 9.91602 5.54199 10.4002 5.54199 11.3743V12.8327H8.45866V11.3743C8.45866 10.4002 7.97449 9.91602 7.00033 9.91602Z"
+                    stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                دیجی تایز :
+              </span>
+              <span class="font-sans text-slate-500 text-sm mr-2">فروشنده</span>
+            </div>
+            <div class="flex items-centers mt-6">
+              <span class="flex items-center font-sans text-slate-800 text-sm font-bold">
+                <svg width="18" height="18" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.43053 1.57973L3.89594 2.91139C3.08136 3.21598 2.41553 4.17931 2.41553 5.04348V10.3064C2.41553 11.1422 2.96803 12.2401 3.64094 12.7431L6.68678 15.0168C7.68553 15.7676 9.32886 15.7676 10.3276 15.0168L13.3734 12.7431C14.0464 12.2401 14.5989 11.1422 14.5989 10.3064V5.04348C14.5989 4.17223 13.933 3.20889 13.1184 2.90431L9.58386 1.57973C8.98178 1.36014 8.01844 1.36014 7.43053 1.57973Z"
+                    stroke="#222F5D" stroke-width="1.0625" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                گارانتی :
+              </span>
+              <span class="font-sans text-slate-500 text-sm mr-2">18 ماه گارانتی</span>
+            </div>
+            <div class="flex items-center mr-6 mt-6 lg:mb-20 lg:mr-0">
+              <span class="flex items-center font-sans text-slate-800 text-sm font-bold">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.0002 1.33301V7.99967C10.0002 8.73301 9.40016 9.33301 8.66683 9.33301H1.3335V5.07967C1.82016 5.65967 2.56685 6.01967 3.39351 5.99967C4.06685 5.98634 4.6735 5.72634 5.12683 5.29301C5.3335 5.11968 5.50684 4.89967 5.64018 4.65967C5.88018 4.253 6.0135 3.77299 6.00016 3.27299C5.98016 2.49299 5.63351 1.80634 5.09351 1.33301H10.0002Z"
+                    stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.6668 9.33301V11.333C14.6668 12.4397 13.7735 13.333 12.6668 13.333H12.0002C12.0002 12.5997 11.4002 11.9997 10.6668 11.9997C9.9335 11.9997 9.3335 12.5997 9.3335 13.333H6.66683C6.66683 12.5997 6.06683 11.9997 5.3335 11.9997C4.60016 11.9997 4.00016 12.5997 4.00016 13.333H3.3335C2.22683 13.333 1.3335 12.4397 1.3335 11.333V9.33301H8.66683C9.40016 9.33301 10.0002 8.73301 10.0002 7.99967V3.33301H11.2268C11.7068 3.33301 12.1468 3.59301 12.3868 4.00635L13.5268 5.99967H12.6668C12.3002 5.99967 12.0002 6.29967 12.0002 6.66634V8.66634C12.0002 9.03301 12.3002 9.33301 12.6668 9.33301H14.6668Z"
+                    stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M5.33333 14.6667C6.06971 14.6667 6.66667 14.0697 6.66667 13.3333C6.66667 12.597 6.06971 12 5.33333 12C4.59695 12 4 12.597 4 13.3333C4 14.0697 4.59695 14.6667 5.33333 14.6667Z"
+                    stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10.6668 14.6667C11.4032 14.6667 12.0002 14.0697 12.0002 13.3333C12.0002 12.597 11.4032 12 10.6668 12C9.93045 12 9.3335 12.597 9.3335 13.3333C9.3335 14.0697 9.93045 14.6667 10.6668 14.6667Z"
+                    stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.6667 8V9.33333H12.6667C12.3 9.33333 12 9.03333 12 8.66667V6.66667C12 6.3 12.3 6 12.6667 6H13.5267L14.6667 8Z"
+                    stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M6.00033 3.33268C6.00033 4.13268 5.647 4.84602 5.09367 5.33268C4.62034 5.74602 4.00699 5.99935 3.33366 5.99935C1.86033 5.99935 0.666992 4.80602 0.666992 3.33268C0.666992 2.49268 1.05366 1.73935 1.66699 1.25269C2.12699 0.886019 2.70699 0.666016 3.33366 0.666016C4.80699 0.666016 6.00033 1.85935 6.00033 3.33268Z"
+                    stroke="#222F5D" stroke-width="1.125" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M3.50033 2.49902V3.49902L2.66699 3.99902" stroke="#222F5D" stroke-width="1.125"
+                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                ارسال توسط :
+              </span>
+              <span class="font-sans text-slate-500 text-sm mr-2">انبار تهران</span>
+            </div>
+            <span class="font-sans font-bold text-lg text-orange-400 w-full text-left">
+              <span class="inline-block font-sans font-bold text-2xl text-orange-400">25,000,000</span>
+              تومان
+            </span>
+            <button
+              class="font-sans font-bold text-lg text-white w-full text-center rounded-md bg-orange-400 py-3 mt-4">افزودن
+              به سبد خرید</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--? Fixe Add To Cart Button -->
+  <div class="flex justify-between items-center bg-white w-full lg:hidden fixed bottom-0 ring-0 py-4 px-3">
+    <button class="font-sans text-md text-white bg-orange-400 rounded-lg py-3 px-5">افزودن به سبد خرید</button>
+    <span class="font-sans font-bold text-sm text-orange-400">
+      <span class="inline-block font-sans font-bold text-lg text-orange-400">25,000,000</span>
+      تومان
+    </span>
+  </div>
+
+  <script src="../js/shop.js" type="module"></script>
+  <script src=" //unpkg.com/alpinejs" defer>
+  </script>
+</body>
+
+</html>
