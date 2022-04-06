@@ -42,3 +42,11 @@
 //  router()
 //})
 
+//!check connect to internet
+//function CheckInternet() {
+//  return (window.navigator.onLine ? 'on' : 'off') + 'line'
+//}
+
+//setInterval(() => {
+//  console.log(CheckInternet())
+//}, 10000)
